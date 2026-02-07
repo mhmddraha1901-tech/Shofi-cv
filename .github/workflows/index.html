@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Shofi Lutfia Juliana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-purple: #9333ea;
+            --light-purple: #f3e8ff;
+            --dark-purple: #6b21a8;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #faf5ff;
+            overflow-x: hidden;
+        }
+
+        /* Animasi Latar Belakang Bergerak */
+        .purple-orb {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(250, 245, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: float 25s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-10%, -10%) scale(1); }
+            100% { transform: translate(80vw, 70vh) scale(1.2); }
+        }
+
+        /* Floating Icons Decoration */
+        .floating-icon {
+            position: fixed;
+            color: rgba(147, 51, 234, 0.1);
+            z-index: -1;
+            animation: drift 10s infinite linear;
+        }
+
+        @keyframes drift {
+            from { transform: translateY(110vh) rotate(0deg); }
+            to { transform: translateY(-10vh) rotate(360deg); }
+        }
+
+        /* Animasi Muncul (Scroll Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header Styling */
+        .header-gradient {
+            background: linear-gradient(135deg, #a855f7 0%, #6b21a8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-gradient::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: sweep 8s infinite linear;
+        }
+
+        @keyframes sweep {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(168, 85, 247, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 25px 50px -12px rgba(147, 51, 234, 0.2);
+            border-color: var(--primary-purple);
+        }
+
+        /* Progress Bar Animation */
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #a855f7, #9333ea);
+            width: 0;
+            transition: width 2s cubic-bezier(0.1, 0.42, 0.41, 1);
+        }
+
+        .active .progress-fill-indo { width: 100%; }
+        .active .progress-fill-eng { width: 50%; }
+
+        /* Social Icon Animation */
+        .social-link {
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            transform: translateY(-5px) rotate(8deg);
+            color: var(--primary-purple);
+        }
+
+        /* Timeline Pulse */
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            background: var(--primary-purple);
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 8px;
+            border: 3px solid white;
+            box-shadow: 0 0 0 4px var(--light-purple);
+        }
+
+        .active .timeline-dot {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0px rgba(147, 51, 234, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(147, 51, 234, 0); }
+            100% { box-shadow: 0 0 0 0px rgba(147, 51, 234, 0); }
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- Efek Dekorasi Latar -->
+    <div class="purple-orb" style="top: 0; left: 0;"></div>
+    <div class="purple-orb" style="bottom: 0; right: 0; animation-delay: -5s;"></div>
+    
+    <!-- Ikon Melayang -->
+    <i class="fas fa-book floating-icon" style="left: 5%; animation-duration: 15s;"></i>
+    <i class="fas fa-utensils floating-icon" style="left: 25%; animation-duration: 18s; animation-delay: 2s;"></i>
+    <i class="fas fa-heart floating-icon" style="left: 60%; animation-duration: 12s; animation-delay: 5s;"></i>
+    <i class="fas fa-star floating-icon" style="left: 85%; animation-duration: 20s;"></i>
+
+    <div class="max-w-5xl mx-auto my-12 px-6">
+        <!-- Header Section -->
+        <header class="header-gradient rounded-[2.5rem] p-10 text-white shadow-2xl reveal flex flex-col md:flex-row items-center gap-10">
+            <div class="relative group">
+                <div class="w-48 h-48 rounded-[2rem] border-4 border-white/40 overflow-hidden shadow-2xl rotate-2 group-hover:rotate-0 transition-all duration-700 ease-out">
+                    <img src="shofi.png" alt="Foto Shofi Lutfia Juliana" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -z-10 -bottom-3 -right-3 w-full h-full bg-purple-400/30 rounded-[2rem] rotate-6 group-hover:rotate-0 transition-transform duration-700"></div>
+            </div>
+            
+            <div class="text-center md:text-left z-10">
+                <h1 class="text-4xl md:text-6xl font-bold mb-3 tracking-tight animate-pulse">Shofi Lutfia Juliana</h1>
+                <p class="text-purple-100 text-xl mb-8 font-medium italic opacity-90">"Mengeksplorasi hal baru dengan semangat"</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-semibold">
+                    <div class="flex items-center gap-3 bg-white/10 p-3 rounded-2xl backdrop-blur-md hover:bg-white/20 transition-all cursor-default">
+                        <i class="fas fa-birthday-cake text-purple-200"></i> 12 Juli 2008
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/10 p-3 rounded-2xl backdrop-blur-md hover:bg-white/20 transition-all cursor-default">
+                        <i class="fas fa-phone-alt text-purple-200"></i> +62 838 2742 5476
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/10 p-3 rounded-2xl backdrop-blur-md hover:bg-white/20 transition-all cursor-default">
+                        <i class="fab fa-instagram text-purple-200"></i> @filutfiaa
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/10 p-3 rounded-2xl backdrop-blur-md hover:bg-white/20 transition-all cursor-default">
+                        <i class="fas fa-map-marker-alt text-purple-200"></i> Ciparay, Kab. Bandung
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-12">
+            <!-- Kolom Kiri -->
+            <div class="lg:col-span-4 space-y-8">
+                <!-- Tentang Saya -->
+                <section class="glass-card p-8 rounded-[2rem] shadow-sm reveal">
+                    <h2 class="text-xl font-bold text-purple-700 mb-5 flex items-center gap-3">
+                        <span class="bg-purple-100 p-2.5 rounded-xl text-purple-600"><i class="fas fa-sparkles"></i></span> Profil
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Halo! Saya **Shofi**. Saya memiliki minat besar pada **membaca**, **memasak**, dan **menonton**. Saya adalah pribadi yang selalu ingin mencoba hal-hal baru untuk mengembangkan potensi diri.
+                    </p>
+                </section>
+
+                <!-- Keahlian & Bahasa -->
+                <section class="glass-card p-8 rounded-[2rem] shadow-sm reveal">
+                    <h2 class="text-xl font-bold text-purple-700 mb-6">Kemampuan Bahasa</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-2 text-gray-500 uppercase tracking-widest">
+                                <span>Indonesia</span>
+                                <span class="text-purple-600">Native</span>
+                            </div>
+                            <div class="h-2 w-full bg-purple-50 rounded-full overflow-hidden">
+                                <div class="progress-fill progress-fill-indo"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-2 text-gray-500 uppercase tracking-widest">
+                                <span>Inggris</span>
+                                <span class="text-purple-400">Basic</span>
+                            </div>
+                            <div class="h-2 w-full bg-purple-50 rounded-full overflow-hidden">
+                                <div class="progress-fill progress-fill-eng"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sertifikat -->
+                <section class="glass-card p-8 rounded-[2rem] shadow-sm reveal">
+                    <h2 class="text-xl font-bold text-purple-700 mb-5 flex items-center gap-3">
+                        <span class="bg-purple-100 p-2.5 rounded-xl text-purple-600"><i class="fas fa-medal"></i></span> Prestasi
+                    </h2>
+                    <div class="group p-5 rounded-2xl bg-gradient-to-br from-purple-50 to-white border border-purple-100 hover:border-purple-300 transition-all">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-yellow-400 text-white p-3 rounded-full shadow-lg group-hover:rotate-12 transition-transform">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-sm">Kaligrafi Putri</p>
+                                <p class="text-[11px] text-gray-500 font-medium">Sertifikat Tingkat SD</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Kolom Kanan -->
+            <div class="lg:col-span-8 space-y-8">
+                <!-- Pengalaman Organisasi -->
+                <section class="glass-card p-10 rounded-[2.5rem] shadow-sm reveal">
+                    <h2 class="text-2xl font-bold text-purple-700 mb-8 flex items-center gap-4">
+                        <i class="fas fa-users-viewfinder text-purple-400"></i> Pengalaman Organisasi
+                    </h2>
+                    <div class="grid gap-6">
+                        <!-- Card Paskibra -->
+                        <div class="group p-7 rounded-[2rem] border border-purple-100 bg-white hover:bg-purple-50/50 transition-all relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
+                                <i class="fas fa-flag text-6xl"></i>
+                            </div>
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="font-bold text-xl text-gray-900 group-hover:text-purple-600">Paskibra</h3>
+                                <span class="bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase shadow-md">SMA</span>
+                            </div>
+                            <p class="text-sm text-gray-600 leading-relaxed italic">
+                                Fokus pada kedisiplinan dan tanggung jawab tinggi melalui latihan fisik dan mental yang terstruktur.
+                            </p>
+                        </div>
+
+                        <!-- Card Komputer -->
+                        <div class="group p-7 rounded-[2rem] border border-purple-100 bg-white hover:bg-purple-50/50 transition-all relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
+                                <i class="fas fa-laptop-code text-6xl"></i>
+                            </div>
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="font-bold text-xl text-gray-900 group-hover:text-purple-600">Ekskul Komputer</h3>
+                                <span class="bg-purple-200 text-purple-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">SMP</span>
+                            </div>
+                            <p class="text-sm text-gray-600 leading-relaxed italic">
+                                Penguasaan dasar perangkat lunak seperti Microsoft Word untuk manajemen dokumen.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Riwayat Pendidikan -->
+                <section class="glass-card p-10 rounded-[2.5rem] shadow-sm reveal">
+                    <h2 class="text-2xl font-bold text-purple-700 mb-12 flex items-center gap-4">
+                        <i class="fas fa-graduation-cap text-purple-400"></i> Pendidikan
+                    </h2>
+                    <div class="ml-4 border-l-2 border-dashed border-purple-200 relative space-y-12">
+                        <!-- SMA -->
+                        <div class="pl-12 relative group reveal">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white p-6 rounded-3xl border border-purple-50 shadow-sm group-hover:border-purple-400 transition-all inline-block">
+                                <span class="text-[10px] font-bold text-purple-500 uppercase tracking-[0.2em]">2023 - 2026</span>
+                                <h4 class="text-lg font-bold text-gray-900">SMA (Sekolah Menengah Atas)</h4>
+                                <div class="h-1 w-12 bg-purple-500 mt-2 rounded-full"></div>
+                            </div>
+                        </div>
+                        <!-- SMP -->
+                        <div class="pl-12 relative group reveal">
+                            <div class="timeline-dot" style="background: #c084fc;"></div>
+                            <div class="bg-white p-6 rounded-3xl border border-purple-50 shadow-sm group-hover:border-purple-300 transition-all inline-block opacity-80 hover:opacity-100">
+                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Lulus 2023</span>
+                                <h4 class="text-lg font-bold text-gray-700">SMP (Sekolah Menengah Pertama)</h4>
+                            </div>
+                        </div>
+                        <!-- SD -->
+                        <div class="pl-12 relative group reveal">
+                            <div class="timeline-dot" style="background: #e9d5ff;"></div>
+                            <div class="bg-white p-6 rounded-3xl border border-purple-50 shadow-sm group-hover:border-purple-200 transition-all inline-block opacity-60 hover:opacity-100">
+                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Lulus 2020</span>
+                                <h4 class="text-lg font-bold text-gray-700">SD (Sekolah Dasar)</h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="mt-20 text-center reveal">
+            <div class="inline-flex gap-8 mb-8 p-4 bg-white/50 rounded-3xl backdrop-blur-sm border border-white">
+                <a href="#" class="social-link text-gray-400 text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link text-gray-400 text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link text-gray-400 text-2xl"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-gray-400 text-sm font-semibold tracking-widest uppercase">© 2024 Shofi Lutfia Juliana</p>
+            <p class="text-[10px] text-purple-300 mt-2">Didesain dengan Cinta & Animasi Modern</p>
+        </footer>
+    </div>
+
+    <script>
+        // Intersection Observer untuk memicu animasi saat scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Inisialisasi posisi ikon melayang secara acak
+        document.querySelectorAll('.floating-icon').forEach(icon => {
+            icon.style.left = Math.random() * 90 + '%';
+            icon.style.animationDelay = Math.random() * 10 + 's';
+        });
+    </script>
+</body>
+</html>
