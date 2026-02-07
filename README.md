@@ -1,0 +1,2 @@
+# Shofi-cv
+tugas cv
